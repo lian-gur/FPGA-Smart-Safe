@@ -1,5 +1,6 @@
 # FPGA-Smart-Safe
 Project Overview
+
 This project implements a Secure Digital Safe System on an Altera Cyclone III FPGA. The system manages a virtual vault with a locking mechanism controlled via a state machine (FSM).
 
 To make the system interactive and modern, it uses the UART (Universal Asynchronous Receiver-Transmitter) protocol to communicate with an external terminal (such as a Smartphone or PC). This allows the user to input passwords and receive status updates (e.g., "Access Granted", "Locked") directly on their device screen.
