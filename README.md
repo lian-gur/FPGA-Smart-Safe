@@ -16,3 +16,10 @@ The system is divided into three main modules:
 1. UART_RX: Samples the serial input line and converts serial bits into 8-bit data bytes.
 2. Safe_Logic: The core controller that compares user input to the stored password and manages security states.
 3. UART_TX: Sends status messages back to the user terminal.
+
+### Safe Logic Module
+The `safe_logic.vhd` component acts as the system's brain. It processes incoming bytes and compares them against a hardcoded password. 
+- **Input:** 8-bit data byte and a 'Data Valid' signal.
+- **States:** - `s_LOCKED`: Initial state, waiting for input.
+  - `s_CHECK_BYTE`: Validates each character in the sequence.
+  - `s_UNLOCKED`: Reached only after the correct 4-digit code is entered.
