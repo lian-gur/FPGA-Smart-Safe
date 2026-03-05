@@ -29,3 +29,7 @@ The `safe_logic.vhd` component acts as the system's brain. It processes incoming
 Below is the top-level block diagram showing the integration of the UART receiver and the safe control logic:
 
 ![Top Level Schematic](top_level_schematic.png)
+
+Troubleshooting
+During development, I encountered an issue where the pin planner wouldn't open because of an 'Auto Device' setting. 
+I resolved this by manually assigning the correct FPGA part number (EP3C16F484C6) in the Device settings.
