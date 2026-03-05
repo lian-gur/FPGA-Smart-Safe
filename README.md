@@ -4,7 +4,7 @@ Project Overview
 This project implements a Secure Digital Safe System on an Altera Cyclone III FPGA. The system manages a virtual vault with a locking mechanism controlled via a state machine (FSM).
 
 To make the system interactive and modern, it uses the UART (Universal Asynchronous Receiver-Transmitter) protocol to communicate with an external terminal (such as a Smartphone or PC). This allows the user to input passwords and receive status updates (e.g., "Access Granted", "Locked") directly on their device screen.
-קבימןבשך 
+ 
 Technical Specifications
 FPGA: Altera Cyclone III (EP3C16F484C6).
 Language: VHDL.
@@ -23,3 +23,8 @@ The `safe_logic.vhd` component acts as the system's brain. It processes incoming
 - **States:** - `s_LOCKED`: Initial state, waiting for input.
   - `s_CHECK_BYTE`: Validates each character in the sequence.
   - `s_UNLOCKED`: Reached only after the correct 4-digit code is entered.
+
+## System Architecture
+Below is the top-level block diagram showing the integration of the UART receiver and the safe control logic:
+
+![Top Level Schematic](top_level_schematic.png)
