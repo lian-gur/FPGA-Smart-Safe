@@ -8,7 +8,7 @@ To make the system interactive and modern, it uses the UART (Universal Asynchron
 Technical Specifications
 FPGA: Altera Cyclone III (EP3C16F484C6).
 Language: VHDL.
-Baude Rate: 9600 bps.
+Baud Rate: 9600 bps.
 Clock Frequency: 50 MHz.
 
 Architecture:
@@ -20,9 +20,10 @@ The system is divided into three main modules:
 ### Safe Logic Module
 The `safe_logic.vhd` component acts as the system's brain. It processes incoming bytes and compares them against a hardcoded password. 
 - **Input:** 8-bit data byte and a 'Data Valid' signal.
-- **States:** - `s_LOCKED`: Initial state, waiting for input.
-  - `s_CHECK_BYTE`: Validates each character in the sequence.
-  - `s_UNLOCKED`: Reached only after the correct 4-digit code is entered.
+- **States:**
+  - s_LOCKED: Initial state, waiting for input.
+  - s_CHECK_BYTE: Validates each character in the sequence.
+  - s_UNLOCKED: Reached only after the correct 4-digit code is entered.
 
 ## System Architecture
 Below is the top-level block diagram showing the integration of the UART receiver and the safe control logic:
