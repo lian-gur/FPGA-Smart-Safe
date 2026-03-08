@@ -37,15 +37,18 @@ After designing the logic, I mapped the system's signals to the physical pins of
 ### Pin Configuration Table:
 | Signal Name | Pin Location | I/O Standard | Description |
 | :--- | :--- | :--- | :--- |
+| LED_GREEN | **PIN_J1** | 3.3-V LVTTL | Green LED (Access Granted) |
+| LED_RED | **PIN_J2** | 3.3-V LVTTL | Red LED (Safe Locked) |
+| LED_YELLOW | **PIN_J3** | 3.3-V LVTTL | Yellow LED (Penalty) |
 | MAX10_CLK1_50 | **PIN_G21** | 3.3-V LVTTL | Main 50MHz System Clock |
-| UART_RX_PIN | **PIN_F1** | 3.3-V LVTTL | Serial Data Input (UART) |
-| LED_LOCKED | **PIN_J1** | 3.3-V LVTTL | Red LED (Safe Locked) |
-| LED_UNLOCKED | **PIN_J2** | 3.3-V LVTTL | Green LED (Access Granted) |
+| UART_RX_PIN | **PIN_U22** | 3.3-V LVTTL | Serial Data Input (UART) |
+| UART_TX_PIN | **PIN_V22** | 3.3-V LVTTL | Serial Data Output (UART) |
 
 > **Note:** All pins were configured using the Quartus Pin Planner and set to the 3.3-V LVTTL standard to ensure hardware compatibility and prevent voltage mismatches.
 
 ![Pin Planner Assignments](pin_assignment_table.png)
 
-Troubleshooting
+Troubleshooting:
+
 During development, I encountered an issue where the pin planner wouldn't open because of an 'Auto Device' setting. 
 I resolved this by manually assigning the correct FPGA part number (EP3C16F484C6) in the Device settings.
